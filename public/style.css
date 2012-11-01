@@ -1,0 +1,255 @@
+body, html
+{
+	height: 100%;
+	background: #fff;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+/*Основной контейнер*/
+.support_box
+{
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	padding: 10px;
+	margin: 10px auto;
+	text-align: center;
+}
+/*Стили кнопок*/
+.support_box .support, .support_box .chat div.footer .send, .support_box .take_shot
+{
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	background: lightblue;
+	font-family: "Trebuchet MS";
+	font-size: 100%;
+	color: #000;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px auto;
+	text-decoration: none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	text-shadow: none;
+	box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	display: block;
+}
+/*Стиль кнопки "Помощь", анимация если пришло сообщение, а чат закрыт*/
+.support_box .get_msg
+{
+	-webkit-animation: shake 0.5s ease-in-out 0s infinite;
+	-moz-animation: shake 0.5s ease-in-out 0s infinite;
+	-o-animation: shake 0.5s ease-in-out 0s infinite;
+	animation: shake 0.5s ease-in-out 0s infinite;
+	color: red;
+}
+/*Анимация в Chrome и Safari*/
+@-webkit-keyframes shake{
+	from { color: red; }
+	60% { -webkit-transform: rotate(0deg); }
+	70% { -webkit-transform: rotate(-5deg); }
+	80% { -webkit-transform: rotate(0deg); }
+	90% { -webkit-transform: rotate(5deg); }
+	100% { -webkit-transform: rotate(0deg); color: black; }
+}
+/*Анимация в Firefox*/
+@-moz-keyframes shake{
+	from { color: red; }
+	60% { -moz-transform: rotate(0deg); }
+	70% { -moz-transform: rotate(-5deg); }
+	80% { -moz-transform: rotate(0deg); }
+	90% { -moz-transform: rotate(5deg); }
+	100% { -moz-transform: rotate(0deg); color: black; }
+}
+/*Анимация в Opera*/
+@-o-keyframes shake{
+	from { color: red; }
+	60% { -o-transform: rotate(0deg); }
+	70% { -o-transform: rotate(-5deg); }
+	80% { -o-transform: rotate(0deg); }
+	90% { -o-transform: rotate(5deg); }
+	100% { -o-transform: rotate(0deg); color: black; }
+}	
+/*Анимация в остальных браузерах*/
+@keyframes shake {
+	from { color: red; }
+	60% { transform: rotate(0deg); }
+	70% { transform: rotate(-5deg); }
+	80% { transform: rotate(0deg); }
+	90% { transform: rotate(5deg); }
+	100% { transform: rotate(0deg); color: black; }
+}
+/*Стиль кнопок, если наведена мышь*/
+.support_box .support:hover, .support_box .chat div.footer .send:hover, .support_box .take_shot:hover
+{
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 0 10px 0 rgba(50, 100, 255, 0.8);
+	-webkit-box-shadow: inset 0 0 10px 0 rgba(50, 100, 255, 0.8);
+	-moz-box-shadow: inset 0 0 10px 0 rgba(50, 100, 255, 0.8);
+}
+/*Контейнер для чата*/
+.support_box .chat
+{
+	width: 100%;
+	padding: 10px;
+	margin: 10px auto;
+	text-align: left;
+	border: 1px solid #000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	text-shadow: none;
+	box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	display: none;
+}
+/*Контейнер для сообщений чата*/
+.support_box .chat div.header
+{
+	width: 100%;
+	margin: 0 0 10px 0;
+	overflow: hidden;
+}
+/*Стили для сообщений чата*/
+.support_box .chat div.header p
+{
+	width: 100%;
+	margin: 5px 0 0 0;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+}
+/*Сообщение: отправленное сообщение*/
+.support_box .chat div.header p#my_msg
+{
+	color: gray;
+}
+/*Сообщение: полученное сообщение*/
+.support_box .chat div.header p#not_my_msg
+{
+	color: red;
+}
+/*Сообщение: информационное сообщение*/
+.support_box .chat div.header p#info_msg
+{
+	color: darkgreen;
+	font-style: italic;
+	font-size: 70%;
+	margin: 0;
+	text-align: right;
+	border-bottom: 1px dotted gray;
+}
+/*Контейнер для ввода и кнопки чата*/
+.support_box .chat div.footer
+{
+	width: 100%;
+	margin: 0;
+	display: inline-block;
+}
+/*Поле ввода чата*/
+.support_box .chat div.footer input[type="text"]
+{
+	width: 70%;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	border: 1px solid black;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	outline: none;
+	float: left;
+}
+/*Поле ввода чата*/
+.support_box .chat div.footer input[type="text"]:hover, .support_box .chat div.footer input[type="text"]:focus
+{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+/*Кнопка "Отправить" чата*/
+.support_box .chat div.footer .send
+{
+	width: 25%;
+	font-size: 90%;
+	margin: 0;
+	float: right;
+}
+/*Картинка со скриншотом экрана клиента*/
+.support_box img#screen
+{
+	width: 400px;
+	height: 300px;
+	margin: 10px auto;
+	display: none;
+}
+/*Кнопка "Экран пользователя"*/
+.support_box .take_shot
+{
+	width: 100%;
+	font-size: 90%;
+	margin: 10px 0;
+}
+/*Показывает место клика саппорта у клиента с анимацией*/
+.target
+{
+	width: 10px;
+	height: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	background: black;
+	box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.8);
+	-webkit-box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.8);
+	-moz-box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.8);
+	-webkit-animation: target 1s ease-in-out 0s 3;
+	-moz-animation: target 1s ease-in-out 0s 3;
+	-o-animation: target 1s ease-in-out 0s 3;
+	animation: target 1s ease-in-out 0s 3;
+	position: absolute;
+	z-index: 9999;
+	display: none;
+}
+/*Анимация в Chrome и Safari*/
+@-webkit-keyframes target
+{
+	from { -webkit-transform: scale(1,1);  background: darkred; }
+	50% { -webkit-transform: scale(3,3);  background: red; }
+	to { -webkit-transform: scale(1,1);  background: darkred; }
+}
+/*Анимация в Firefox*/
+@-moz-keyframes target
+{
+	from { -moz-transform: scale(1,1);  background: darkred; }
+	50% { -moz-transform: scale(3,3);  background: red; }
+	to { -moz-transform: scale(1,1);  background: darkred; }
+}
+/*Анимация в Opera*/
+@-o-keyframes target
+{
+	from { -o-transform: scale(1,1);  background: darkred; }
+	50% { -o-transform: scale(3,3);  background: red; }
+	to { -o-transform: scale(1,1);  background: darkred; }
+}	
+/*Анимация в остальных браузерах*/
+@keyframes target
+{
+	from { transform: scale(1,1);  background: darkred; }
+	50% { transform: scale(3,3);  background: red; }
+	to { transform: scale(1,1);  background: darkred; }
+}
